@@ -36,3 +36,16 @@ class Stopwatch(Frame):
       seconds =int(elap -minutes*60.0)
       hseconds = int((elap-minutes*60.0-seconds)*100)
       return '%02d:%02d:%02d' % (minutes,seconds,hseconds)
+      
+   def main():
+      root = Tk()
+      root.wm_attributes("-topmost", 1)
+      sw = StopWatch(root)
+      sw.pack(side = TOP)
+      Button(root, text = "Lap", command = sw.Lap).pack(side = LEFT)
+      Button(root, text = "Start", command = sw.Start).pack(side = LEFT)
+      Button(root, text = "Stop", command = sw.Stop).pack(side = LEFT)
+      Button(root, text = "Save", command = sw.Save).pack(side = LEFT)
+      Button(root, text = "Quit", command = sw.Quit).pack(side = LEFT)
+      root.mainloop()
+   
