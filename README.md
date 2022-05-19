@@ -36,3 +36,19 @@ class Stopwatch(Frame):
       seconds =int(elap -minutes*60.0)
       hseconds = int((elap-minutes*60.0-seconds)*100)
       return '%02d:%02d:%02d' % (minutes,seconds,hseconds)
+   
+   def Lap(self):
+      '''Makes a lap, only if started'''
+      tempo = self._elaspesdtime - self.lapmod2
+      if self.running
+         self.laps.append(self.selfLapTime(temp))
+         self.m.insert(END, self.laps[-1])
+         self.m.yview_moveto(1)
+         self.laps = self.running
+         self.lapmod2 = self._elapsedtime
+         
+   GravaCSV(self):
+      arquivo = str(self.e.get()) = ' - '
+      with open(arquivo + sel.today + '.txt', 'wb') as lapfile:
+         for lap in self.laps:
+            lapfile.write((bytes(str(lap) + '\n', 'utf-8')))
