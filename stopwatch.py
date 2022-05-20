@@ -10,3 +10,6 @@ class StopWatch(Frame):
         self._running = 0
         self.timestr = StringVar()
         
+    def _set():
+      
+        
