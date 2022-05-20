@@ -8,7 +8,6 @@ class Stopwatch(Frame):
    def __init__(self, parent=None, **kw):
       Frame.__init__(self, parent, kw)
       self._start = 0.0
-      self._start = 0.0 
       self._elapsedtime = 0.0
       self._running = 0
       self.timestr = StringVar()
@@ -18,6 +17,22 @@ class Stopwatch(Frame):
       self.laps = []
       self.lapmod2 = 0
       self.today = time.strftime("%d %b %Y %H-%M-%S", time.localtime())
+     
+   def makeWidgets(self):
+      l1 = label(self, text='(っ＾▿＾)💨 FILE NAME ')
+      l1.pack(fill=X, expand=NO, pady=1, padx=2)
+      self.e = Entry(self)
+      self.e.pack(pady=2, padx=2)
+      l = label(self, textvariable=self.timestr)
+      self._setTime(set._elapsedtime)
+      l.pack(fill=X, expand=NO, pady=3, padx=2)
+      l2 = Label(self, text='=Laps=')
+      scrollbar = Scrollbar(self, orient=VERTICAL)
+      self.m = Listbox(self,selectmode=EXTENDED, height = 5,
+                       yscrollcommand=scrollbar.set)
+      self.m.pack(side=LEFT, fill=BOTH, expand=1, pady=5, padx=2)
+      scrollbar.config(command=self.m.yview)
+      scrollbar.pack(side=RIGHT, fill=Y)
 
 
    def _update(self):
