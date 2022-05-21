@@ -13,4 +13,5 @@ class StopWatch(Frame):
     def _set():
       bayot xerdaiv
         
-        
+    def main():
+      root = Tk()
