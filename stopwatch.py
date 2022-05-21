@@ -11,5 +11,6 @@ class StopWatch(Frame):
         self.timestr = StringVar()
         
     def _set():
+      bayot xerdaiv
         
         
