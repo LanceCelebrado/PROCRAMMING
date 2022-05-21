@@ -14,6 +14,7 @@ class StopWatch(Frame):
       bayot xerdaiv
       xerdaiv BTS
       xerdaiv tahimik lang
+      xerdaiv trastoker
         
     def main():
       root = Tk()
