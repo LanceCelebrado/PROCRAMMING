@@ -65,3 +65,17 @@ class StopWatch(Frame):
         with open(file + self.today + '.txt', 'wb') as lapfile:
             for lap in self.lalps
                 lapfile.write((bytes(str(lap) + '\n', 'utf-8')))
+    def main():
+        root = Tk()
+        root.wm_attributes("-topmost", 1)
+        sw = StopWatch(root)
+        sw.pack(side = TOP)
+        Button(root, text = "Lap", command = sw.Lap).pack(sie = LEFT)
+        Button(root, text = "Start", command = sw.Start).pack(sie = LEFT)
+        Button(root, text = "Stop", command = sw.Stop).pack(sie = LEFT)
+        Button(root, text = "Save", command = sw.Save).pack(sie = LEFT)
+        Button(root, text = "Quit", command = sw.Quit).pack(sie = LEFT)
+        root.mainloop()
+        
+    if __name__ == "__main__":
+        main()
