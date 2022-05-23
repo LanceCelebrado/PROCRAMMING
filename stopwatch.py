@@ -70,8 +70,10 @@ class StopWatch(Frame):
         with open(file + self.today + '.txt', 'wb') as lapfile:
             for lap in self.lalps
                 lapfile.write((bytes(str(lap) + '\n', 'utf-8')))
-               
+                
+                
 def main():
+    
     root = Tk()
     root.wm_attributes("-topmost", 1)
     
