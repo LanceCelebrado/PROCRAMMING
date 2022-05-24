@@ -55,7 +55,7 @@ class StopWatch(Frame):
         hseconds = int ((elap - minutes*60.0 - seconds)*100)
         return '%02d:%02d:%02d' % (minutes, seconds, hseconds)
     
-        def Start(self):                                                     
+    def Start(self):                                                     
         if not self._running:            
             self._start = time.time() - self._elapsedtime
             self._update()
