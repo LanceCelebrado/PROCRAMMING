@@ -76,14 +76,29 @@ def main():
     
     root = Tk()
     root.wm_attributes("-topmost", 1)
+    root.title("PRO[CRAMMERS] STOPWATCH (っ＾▿＾)っ")
+    root.geometry("500x450")
+    root.configure(bg="#383366")
     
+    l = Label(root, text='DIGITAL CLOCK' , font("Minecraft 10"), fg="white", bg="#383275")
+    l.pack(fill=Y, expand=NO, pady=13 ,padx=0)
+    
+    def time():
+        string =strftime('%H:%M:%S %p')
+        mark.config(text = string)
+        mark.after(1000, time)
+    mark = Label(root, font = ('Minecraft 43'), pady=0, padx=0,foreground = 'white', bg="#383366")
+    mark.pack(anchor = 'center')
+    
+    time()
     sw = StopWatch(root)
     sw.pack(side = TOP)
     
     Button(root, text = "Lap", command = sw.Lap).pack(sie = LEFT)
     Button(root, text = "Start", command = sw.Start).pack(sie = LEFT)
     Button(root, text = "Stop", command = sw.Stop).pack(sie = LEFT)
-    Button(root, text = "Save", command = sw.Save).pack(sie = LEFT)
+    Button(root, text = "Reset", fg ="white", command = sw.Reset, font=("Minecraft 12 bold"), bg="#5a548e").place(x247,y410)
+    Button(root, text = "Save", fg ="white, command = sw.Save).pack(sie = LEFT)
     Button(root, text = "Quit", command = sw.Quit).pack(sie = LEFT)
     root.mainloop()
         
